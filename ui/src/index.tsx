@@ -5,9 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
+// Create a root using ReactDOM.createRoot, targeting the "root" element in the HTML.
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+// Render the app within the root using ReactDOM.createRoot().render().
 root.render(
   <React.StrictMode>
     <BrowserRouter>

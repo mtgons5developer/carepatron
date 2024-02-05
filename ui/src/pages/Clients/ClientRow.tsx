@@ -1,28 +1,36 @@
-import { TableCell, TableRow } from "@mui/material";
+import React, { useState } from "react";
+import TableRow from "@mui/material/TableRow";
+import TableCell from "@mui/material/TableCell";
+import Checkbox from "@mui/material/Checkbox";
 
-export interface IProps {
+export default function ClientRow({
+  client,
+  onCheckboxChange,
+  isSelected
+}: {
   client: IClient;
-}
+  onCheckboxChange: (clientId: number) => void;
+  isSelected: boolean;
+}) {
+  const [isChecked, setIsChecked] = useState(isSelected);
 
-export default function ClientListItem({ client }: IProps) {
-  const { id, firstName, lastName, email, phoneNumber } = client;
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked); // Toggle the checkbox state locally
+    onCheckboxChange(Number(client.id)); // Notify the parent component about the change
+  };
 
   return (
-    <TableRow
-      key={id}
-      sx={{
-        "&:last-child td, &:last-child th": { border: 0 },
-        cursor: "pointer",
-        "&:hover": {
-          backgroundColor: "#f5f5f5",
-        },
-      }}
-    >
-      <TableCell component="th" scope="row">
-        {firstName} {lastName}
+    <TableRow>
+      <TableCell padding="checkbox">
+        <Checkbox
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
       </TableCell>
-      <TableCell>{phoneNumber}</TableCell>
-      <TableCell>{email}</TableCell>
+      <TableCell>{client.firstName}</TableCell>
+      <TableCell>{client.lastName}</TableCell>
+      <TableCell>{client.phoneNumber}</TableCell>
+      <TableCell>{client.email}</TableCell>
     </TableRow>
   );
 }
