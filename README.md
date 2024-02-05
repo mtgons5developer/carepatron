@@ -2,7 +2,7 @@
 React<br> 
 Checkbox<br> 
 Modal for Clients + Save function to Mock-API<br> 
-Search box for Clients<br><br>
+Search box for Clients<br>
 Future additions:
 <br>
 Delete/Tags/Imports/Assigned staff functions.
