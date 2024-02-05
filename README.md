@@ -1,6 +1,6 @@
 # [Visit the wiki](https://github.com/Carepatron/Carepatron-Test-Full/wiki)
-React 
-Checkbox
-Modal for Clients + Save function to Mock-API
-Search box for Clients
+React<br> 
+Checkbox<br> 
+Modal for Clients + Save function to Mock-API<br> 
+Search box for Clients<br> 
 
